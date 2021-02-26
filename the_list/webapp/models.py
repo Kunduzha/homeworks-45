@@ -16,4 +16,4 @@ class List(models.Model):
         verbose_name_plural = 'Задачи'
 
     def __str__(self):
-        return f'{self.id}, {self.status}'
+        return f'{self.id}, {self.status},{self.created_at}'
