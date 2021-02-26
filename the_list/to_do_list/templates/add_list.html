@@ -1,4 +1,3 @@
-{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,15 +9,16 @@
 </head>
 <body>
 <div class="container">
-    <a href="/the_list/add"> добавить список</a>
-    <h1> Задачи:</h1>
-    {% if not lists %}
-        <h2>Нет Задач</h2>
-    {% endif %}
-    {% for list in lists %}
-
-
-
+    <form action="">
+        <select name="status">
+            {% for choice_eng, choice_ru in choices %}
+                <option value="{{ choice_eng }}">{{ choice_ru }}</option>
+            {% endfor %}
+        </select>
+        <lable>Описание</lable>
+        <input type="text" name="description">
+        <input type="date" name="created_at">
+    </form>
 </div>
 </body>
 </html>

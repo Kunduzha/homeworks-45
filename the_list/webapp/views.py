@@ -1,12 +1,20 @@
 from django.shortcuts import render
-from webapp.models import List
+from webapp.models import List, status_choices
+
+
 # Create your views here.
 def list_view(request):
-    lists=Listj.objects.all()
-    return render(request, 'list_view.html', context={'lists': lists})
+    lists=List.objects.all()
+    return render(request, 'list_view.html', {'lists': lists})
 
 
 def add_list(request):
-    list=get_object_or_404(List, id=pk)
-    return render(request, 'add_list.html', context='list':list)
+    if request.method == "GET":
+        return render(request, 'add_list.html', {"choices": status_choices})
+    else:
+        status = request.POST.get("status")
+        description=request.POST.get("description")
+        date_created=request.POST.get("created_at ")
 
+
+        List.objects.create(status=status, description=description, date_created=date_created  )
