@@ -10,5 +10,10 @@ class List(models.Model):
                               verbose_name='Status')
     created_at = models.DateField(null=True, blank=True, verbose_name='Change time')
 
+    class Meta:
+        db_table='the_lists'
+        verbose_name = 'Задача'
+        verbose_name_plural = 'Задачи'
+
     def __str__(self):
-        return self.description
+        return f'{self.id}, {self.status}'
