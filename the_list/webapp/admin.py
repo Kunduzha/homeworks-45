@@ -6,10 +6,10 @@ from webapp.models import List
 
 
 class ListAdmin(admin.ModelAdmin):
-    list_display = ['id', 'status', 'description', 'created_at']
+    list_display = ['id', 'status', 'description', 'created_at', 'about_list']
     list_filter = ['description']
     search_fields = ['status', 'description']
-    fields = ['id', 'status', 'description', 'created_at']
+    fields = ['id', 'status', 'description', 'created_at','about_list']
     readonly_fields = ['created_at', 'id']
 
 

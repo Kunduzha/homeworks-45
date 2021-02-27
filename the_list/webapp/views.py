@@ -15,6 +15,7 @@ def add_list(request):
         status = request.POST.get("status")
         description=request.POST.get("description")
         date_created=request.POST.get("created_at ")
+        see_more=request.POST.get('about_list')
 
 
-        List.objects.create(status=status, description=description, date_created=date_created  )
+        List.objects.create(status=status, description=description, date_created=date_created, see_more=see_more )

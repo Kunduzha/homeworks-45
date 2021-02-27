@@ -9,6 +9,7 @@ class List(models.Model):
                               default=status_choices[0],
                               verbose_name='Status')
     created_at = models.DateField(null=True, blank=True, verbose_name='Change time')
+    about_list=models.TextField(max_length=3000, null=True, blank=True)
 
     class Meta:
         db_table='the_lists'
