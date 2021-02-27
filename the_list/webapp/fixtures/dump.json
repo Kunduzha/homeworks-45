@@ -1,0 +1,29 @@
+[
+{
+  "model": "webapp.list",
+  "pk": 1,
+  "fields": {
+    "description": "hghjgkjgjkhg",
+    "status": "new",
+    "created_at": null
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$i4iItYLTbrDy$sCgX9PRp0pKM23A+sCa5yR18bT8rlQpSnQj0fjzToKY=",
+    "last_login": "2021-02-26T14:50:29.111Z",
+    "is_superuser": true,
+    "username": "kunduz",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-02-26T14:50:02.224Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
