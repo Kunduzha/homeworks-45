@@ -1,15 +1,8 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<div class="container">
-    <form action="">
+{% extends 'base.html' %}
+{% block content %}
+    <a href="{% url "all_list" %}">На список задач</a>
+    <form action="{% url "adding_list" %}" method="post">
+    {% csrf_token %}
         <select name="status">
             {% for choice_eng, choice_ru in choices %}
                 <option value="{{ choice_eng }}">{{ choice_ru }}</option>
@@ -18,9 +11,9 @@
         <lable>Описание</lable>
         <input type="text" name="description">
         <input type="date" name="created_at">
+        <lable>Описание</lable>
+        <input type="text" name="about_list">
         <br/>
         <input type="submit" value="Send"/>
     </form>
-</div>
-</body>
-</html>
+{% endblock content %}

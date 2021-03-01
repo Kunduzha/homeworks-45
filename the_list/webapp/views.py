@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponseRedirect
 from webapp.models import List, status_choices
 from django.urls import reverse
@@ -11,8 +11,9 @@ def list_view(request):
 
 def list_more(request, pk):
 
-    list_more=List.objects.get(id=pk)
-    return render(request, 'see_more.html', context={'lists': list_more})
+    # list_more=List.objects.get(id=pk)
+    list1=get_object_or_404(List, id=pk)
+    return render(request, 'see_more.html', context={'list': list_more})
 
 
 def add_list(request):
@@ -22,10 +23,8 @@ def add_list(request):
         status = request.POST.get("status")
         description=request.POST.get("description")
         date_created=request.POST.get("created_at ")
-        see_more=request.POST.get('about_list')
+        about_list=request.POST.get('about_list')
 
 
-
-
-        List.objects.create(status=status, description=description, date_created=date_created, see_more=see_more )
-        return HttpResponseRedirect(reverse('list_more', kwargs={'pk': list.id}))
+        new_list = List.objects.create(status=status, description=description, created_at=date_created, about_list=about_list )
+        return redirect('list_more', pk=new_list.id)

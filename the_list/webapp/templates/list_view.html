@@ -1,30 +1,19 @@
-{% load static %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<div class="container">
-    {% block page_header %}Добавить задачу{% endblock page_header %}
-    {% if not lists %}
-        <h1>Нет Задач</h1>
-    {% else %}
-        <h1>Задачи</h1>
-        {% for list in lists %}
-        <h6>
-            {{ list.status }}: {{ list.description }}
-        </h6>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        {% block page_header %}<a href="{% url "adding_list" %}">Добавить задачу</a>{% endblock page_header %}
+        {% if not lists %}
+            <h1>Нет Задач</h1>
+        {% else %}
+            <h1>Задачи</h1>
+            {% for list in lists %}
             <h6>
-                <a href="{% url 'list_more' list.pk %}">{{ list.about_list }}</a>
+                {{ list.status }}: {{ list.description }}
             </h6>
-        {% endfor %}
-    {% endif %}
-</div>
-
-</body>
-</html>
+                <h6>
+                    <a href="{% url 'list_more' list.pk %}">{{ list.description }}</a>
+                </h6>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock content %}

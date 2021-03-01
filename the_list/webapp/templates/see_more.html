@@ -1,31 +1,10 @@
-{% load static %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 
-<a href="{% url 'all_list' %}"> список задач</a>
-<div class="container">
-    {% if not lists %}
-        <h1>Нет Задач</h1>
-    {% else %}
-        <h1>Задач</h1>
+    <a href="{% url 'all_list' %}"> список задач</a>
 
-
-        <p>статус:  {{ list.status }}</p>
-        <p>описание: {{ list.description }}</p>
-        <p>подробно: {{ lists.about_list }}</p>
-
-
-        {% endfor %}
-    {% endif %}
-</div>
-
-</body>
-</html>
+            <h1>Задач</h1>
+            <p>статус:  {{ list.status }}</p>
+            <p>описание: {{ list.description }}</p>
+            <p>подробно: {{ list.about_list }}</p>
+{% endblock content %}
