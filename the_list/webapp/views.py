@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect,
 from webapp.models import List, status_choices
 
 
@@ -19,3 +20,4 @@ def add_list(request):
 
 
         List.objects.create(status=status, description=description, date_created=date_created, see_more=see_more )
+        return HttpResponseRedirect(f'/list?id={list.id}')
