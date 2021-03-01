@@ -6,5 +6,9 @@
             <h1>Задач</h1>
             <p>статус:  {{ list.status }}</p>
             <p>описание: {{ list.description }}</p>
+    {% if list.about_list %}
             <p>подробно: {{ list.about_list }}</p>
+    {% else %}
+        <p>нету подробного описания</p>
+    {% endif %}
 {% endblock content %}

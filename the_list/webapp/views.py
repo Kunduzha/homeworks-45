@@ -12,8 +12,8 @@ def list_view(request):
 def list_more(request, pk):
 
     # list_more=List.objects.get(id=pk)
-    list1=get_object_or_404(List, id=pk)
-    return render(request, 'see_more.html', context={'list': list_more})
+    list=get_object_or_404(List, id=pk)
+    return render(request, 'see_more.html', context={'list': list})
 
 
 def add_list(request):
