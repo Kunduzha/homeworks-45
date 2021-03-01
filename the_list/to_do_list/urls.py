@@ -19,6 +19,7 @@ from webapp.views import list_view, add_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', list_view),
-    path('add/', add_list)
+    path('', list_view, name='all_list'),
+    path('add/', add_list, name='adding_list')
+    path('list/<int: pk', list_more, name='list_more')
 ]
