@@ -5,7 +5,98 @@
   "fields": {
     "description": "hghjgkjgjkhg",
     "status": "new",
-    "created_at": null
+    "created_at": null,
+    "about_list": null
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 2,
+  "fields": {
+    "description": "Первая запись",
+    "status": "new",
+    "created_at": null,
+    "about_list": null
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 3,
+  "fields": {
+    "description": "Вторая запись",
+    "status": "in_progress",
+    "created_at": null,
+    "about_list": null
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 4,
+  "fields": {
+    "description": "Последняя запись",
+    "status": "done",
+    "created_at": null,
+    "about_list": null
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 5,
+  "fields": {
+    "description": "jfdal;sdj",
+    "status": "new",
+    "created_at": null,
+    "about_list": "djfa;kldjfla;fj"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 6,
+  "fields": {
+    "description": "cdc",
+    "status": "new",
+    "created_at": null,
+    "about_list": "cdcd"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 7,
+  "fields": {
+    "description": "cdc",
+    "status": "new",
+    "created_at": null,
+    "about_list": "cdcd"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 8,
+  "fields": {
+    "description": "fedd",
+    "status": "done",
+    "created_at": null,
+    "about_list": "dddd"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 9,
+  "fields": {
+    "description": "красота",
+    "status": "new",
+    "created_at": null,
+    "about_list": "Красота требует жертв"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 10,
+  "fields": {
+    "description": "Кыргызстан",
+    "status": "new",
+    "created_at": null,
+    "about_list": "Центральная Азия"
   }
 },
 {

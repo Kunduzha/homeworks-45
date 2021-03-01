@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <a href="{% url 'all_list' %}"> список задач</a>
 
-            <h1>Задач</h1>
-            <p>статус:  {{ list.status }}</p>
-            <p>описание: {{ list.description }}</p>
+
+    <h1>Задачa</h1>
+    <p>статус:  {{ list.status }}</p>
+    <p>описание: {{ list.description }}</p>
     {% if list.about_list %}
-            <p>подробно: {{ list.about_list }}</p>
+        <p>подробно: {{ list.about_list }}</p>
     {% else %}
         <p>нету подробного описания</p>
     {% endif %}
