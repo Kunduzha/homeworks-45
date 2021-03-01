@@ -9,18 +9,20 @@
     <title>Document</title>
 </head>
 <body>
+
+<a href="{% url 'all_list' %}"> список задач</a>
 <div class="container">
     {% if not lists %}
         <h1>Нет Задач</h1>
     {% else %}
-        <h1>Задачи</h1>
-        {% for list in lists %}
-        <h6>
-            {{ list.status }}: {{ list.description }}
-        </h6>
-            <h6>
-                <a href="see_more.html">{{ list.about_list }}</a>
-            </h6>
+        <h1>Задач</h1>
+
+
+        <p>статус:  {{ list.status }}</p>
+        <p>описание: {{ list.description }}</p>
+        <p>подробно: {{ lists.about_list }}</p>
+
+
         {% endfor %}
     {% endif %}
 </div>

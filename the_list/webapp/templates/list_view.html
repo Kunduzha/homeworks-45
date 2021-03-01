@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="container">
+    {% block page_header %}Добавить задачу{% endblock page_header %}
     {% if not lists %}
         <h1>Нет Задач</h1>
     {% else %}
@@ -19,7 +20,7 @@
             {{ list.status }}: {{ list.description }}
         </h6>
             <h6>
-                {{ list.about_list }}
+                <a href="{% url 'list_more' list.pk %}">{{ list.about_list }}</a>
             </h6>
         {% endfor %}
     {% endif %}

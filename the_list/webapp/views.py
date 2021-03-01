@@ -9,9 +9,9 @@ def list_view(request):
     lists=List.objects.all()
     return render(request, 'list_view.html', {'lists': lists})
 
-def article_more(request, pk):
-    list_id=request.GET.get('id')
-    list_more=List.objects.get(id=list_id)
+def list_more(request, pk):
+
+    list_more=List.objects.get(id=pk)
     return render(request, 'see_more.html', context={'lists': list_more})
 
 
@@ -25,5 +25,7 @@ def add_list(request):
         see_more=request.POST.get('about_list')
 
 
+
+
         List.objects.create(status=status, description=description, date_created=date_created, see_more=see_more )
-        return HttpResponseRedirect(reverse('adding_list'))
+        return HttpResponseRedirect(reverse('list_more', kwargs={'pk': list.id}))
