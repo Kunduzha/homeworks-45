@@ -37,7 +37,7 @@ def add_list(request, *args, **kwargs):
             return render(request, 'add_list.html', {'form': form})
 
 
-def  list_update(request, pk):
+def list_update(request, pk):
     list = get_object_or_404(List, pk=pk)
     if request.method == 'GET':
         form = ListForms(initial={
@@ -46,16 +46,25 @@ def  list_update(request, pk):
             'created_at': list.created_at,
             'about_list': list.about_list,
         })
-        return render(request, 'update.html', context={'form': form, 'list': list})
+        return render(request, 'listupdate.html', context={'form': form, 'list': list})
     elif request.method == 'POST':
         form = ListForms(data=request.POST)
         if form.is_valid():
-            status = form.cleaned_data["status"]
-            description = form.cleaned_data["description"]
-            date_created = form.cleaned_data["created_at"]
-            about_list = form.cleaned_data['about_list']
-            article.save()
+            list.status = form.cleaned_data["status"]
+            list.description = form.cleaned_data["description"]
+            list.date_created = form.cleaned_data["created_at"]
+            list.about_list = form.cleaned_data['about_list']
+            list.save()
             return redirect('list_more', pk=list.pk)
         else:
             return render(request, 'listupdate.html', context={'form': form, 'list': list})
 
+
+def delete_list(request, pk):
+    list = get_object_or_404(List, pk=pk)
+    print(list)
+    if request.method == 'GET':
+        return render(request, 'delete.html', context={'list': list})
+    elif request.method == 'POST':
+        list.delete()
+        return redirect('all_list')

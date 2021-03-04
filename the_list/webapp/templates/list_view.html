@@ -14,6 +14,9 @@
                 <h6>
                     <a href="{% url 'list_more' list.pk %}">{{ list.description }}</a>
                 </h6>
+                 <h6>
+                    <a href="{% url 'delete_list' list.pk %}">удалить</a>
+                </h6>
             {% endfor %}
         {% endif %}
     </div>

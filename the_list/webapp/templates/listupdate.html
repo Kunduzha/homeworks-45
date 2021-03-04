@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
+{% block menu %}
+    <li><a href="{% url "list_more" list.pk %}">back</a></li>
+{% endblock %}
 {% block content %}
-    <a href="{% url "all_list" %}">На список задач</a>
+
 {#    {{ form.as_p }}#}
     <form action="" method="post">
         {% include 'partial/form.html' with button_text="update"%}

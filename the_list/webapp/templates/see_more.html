@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+{% block menu %}
+    <li><a href="{% url "list_update" list.pk %}">Изменить</a></li>
+{#    <li><a href="{% url "delete_list" list.pk %}">Удалить</a></li>#}
+{% endblock %}
 {% block content %}
 
 
 
     <h1>Задачa</h1>
+    <p>время:  {{ list.created_at }}</p>
     <p>статус:  {{ list.status }}</p>
     <p>описание: {{ list.description }}</p>
     {% if list.about_list %}
