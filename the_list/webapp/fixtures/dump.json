@@ -1,36 +1,6 @@
 [
 {
   "model": "webapp.list",
-  "pk": 1,
-  "fields": {
-    "description": "hghjgkjgjkhg",
-    "status": "new",
-    "created_at": null,
-    "about_list": null
-  }
-},
-{
-  "model": "webapp.list",
-  "pk": 2,
-  "fields": {
-    "description": "Первая запись",
-    "status": "new",
-    "created_at": null,
-    "about_list": null
-  }
-},
-{
-  "model": "webapp.list",
-  "pk": 3,
-  "fields": {
-    "description": "Вторая запись",
-    "status": "in_progress",
-    "created_at": null,
-    "about_list": null
-  }
-},
-{
-  "model": "webapp.list",
   "pk": 4,
   "fields": {
     "description": "Последняя запись",
@@ -81,16 +51,6 @@
 },
 {
   "model": "webapp.list",
-  "pk": 9,
-  "fields": {
-    "description": "красота",
-    "status": "new",
-    "created_at": null,
-    "about_list": "Красота требует жертв"
-  }
-},
-{
-  "model": "webapp.list",
   "pk": 10,
   "fields": {
     "description": "Кыргызстан",
@@ -100,11 +60,81 @@
   }
 },
 {
+  "model": "webapp.list",
+  "pk": 11,
+  "fields": {
+    "description": "cdc",
+    "status": "new",
+    "created_at": null,
+    "about_list": "fefefe"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 12,
+  "fields": {
+    "description": "kkkkk",
+    "status": "new",
+    "created_at": "2020-01-01",
+    "about_list": "zzxsxs"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 13,
+  "fields": {
+    "description": "1",
+    "status": "new",
+    "created_at": null,
+    "about_list": "wdww"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 14,
+  "fields": {
+    "description": "kkkkk",
+    "status": "in_progress",
+    "created_at": "2020-01-01",
+    "about_list": "cscscscs"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 15,
+  "fields": {
+    "description": "cscscs",
+    "status": "new",
+    "created_at": null,
+    "about_list": ""
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 16,
+  "fields": {
+    "description": "cdcscscsc",
+    "status": "new",
+    "created_at": "2021-03-12",
+    "about_list": "sscs"
+  }
+},
+{
+  "model": "webapp.list",
+  "pk": 17,
+  "fields": {
+    "description": "3e2e2e2",
+    "status": "new",
+    "created_at": "2021-03-14",
+    "about_list": "wdwdw"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$i4iItYLTbrDy$sCgX9PRp0pKM23A+sCa5yR18bT8rlQpSnQj0fjzToKY=",
-    "last_login": "2021-02-26T14:50:29.111Z",
+    "last_login": "2021-03-04T10:26:49.523Z",
     "is_superuser": true,
     "username": "kunduz",
     "first_name": "",
