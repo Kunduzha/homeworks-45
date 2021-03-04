@@ -35,20 +35,27 @@ def add_list(request, *args, **kwargs):
             return redirect('list_more', pk=new_list.pk)
         else:
             return render(request, 'add_list.html', {'form': form})
-    # else:
-    # new_list = List.objects.create(status=status, description=description, created_at=date_created, about_list=about_list )
-    # return redirect('list_more', pk=new_list.id)
 
 
-def list_update(request, pk):
+def  list_update(request, pk):
     list = get_object_or_404(List, pk=pk)
     if request.method == 'GET':
-        return render(request, 'update.html', context={'list': lists})
+        form = ListForms(initial={
+            'description': list.description,
+            'status': list.status,
+            'created_at': list.created_at,
+            'about_list': list.about_list,
+        })
+        return render(request, 'update.html', context={'form': form, 'list': list})
     elif request.method == 'POST':
-        article.title = request.POST.get('title')
-        list.description = request.POST.get('description')
-        list.status = request.POST.get('status')
-        list.created_at = request.POST.get('created_at')
-        list.about_list = request.POST.get('about_list')
-        list.save()
-        return redirect('list_more', pk=list.pk)
+        form = ListForms(data=request.POST)
+        if form.is_valid():
+            status = form.cleaned_data["status"]
+            description = form.cleaned_data["description"]
+            date_created = form.cleaned_data["created_at"]
+            about_list = form.cleaned_data['about_list']
+            article.save()
+            return redirect('list_more', pk=list.pk)
+        else:
+            return render(request, 'listupdate.html', context={'form': form, 'list': list})
+
